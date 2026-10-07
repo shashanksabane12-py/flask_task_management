@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %} 
+
+    <div class="card" p-4>
+        <div class="d-flex justify-content-between mb-3">
+            <h4>
+                <i class="fa fa-users"></i> Student Management
+            </h4>
+            <a href="/add" class="btn btn-primary">
+                <i class="fa fa-plus"></i>Add Student</a>
+        </div>
+
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for i in student_data %}
+                <tr>
+                    <td>{{i[0]}}</td>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                    <td>{{i[3]}}</td>
+
+                    <td>
+                        <a href="/edit/{{i[0]}}"><i class="btn btn-warning btn-sm" class="fa fa-edit">Edit</i></a>
+                        <a href="/delete/{{i[0]}}"><i class="btn btn-warning btn-sm" class="fa fa-trash">Delete</i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+{% endblock %}

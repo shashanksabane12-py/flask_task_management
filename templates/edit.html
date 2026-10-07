@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card p-4 col-md-6 mx-auto">
+        <h4>
+            <i class fa fa-edit></i> Edit Student
+        </h4>
+
+        <form method="POST">
+            
+            <div><input type="text" value="{{student_data[1]}}" name="name" class="form-control mb-3" placeholder="Enter Name"></div>
+            <div><input type="email" value="{{student_data[2]}}" name="email" class="form-control mb-3" placeholder="Enter Email"></div>
+            <div><input type="text" value="{{student_data[3]}}" name="course" class="form-control mb-3" placeholder="Enter Course"></div>
+        
+        <button class="btn btn-primary w-100">
+            <i class="fa fa-update"></i> Update Student
+        </button>
+        
+        </form>
+
+        
+    </div>
+
+{% endblock %}
